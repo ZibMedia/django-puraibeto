@@ -29,7 +29,7 @@ class AttachedFileBase(models.Model):
     def get_uploadpath(instance, filename):
         ext = None
         if "." in filename:
-            filename, ext = filename.rsplit(".")
+            filename, ext = filename.rsplit(".",1)
 
         if " " in filename:
             filename = slugify(filename)
